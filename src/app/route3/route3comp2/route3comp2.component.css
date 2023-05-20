@@ -1,0 +1,8 @@
+.border-div{
+    border: 2px solid black;
+    /* justify-content: left; */
+    width: 500px;
+    height: 150px;
+    /* display: inline-block; */
+    /* margin-right: 520px; */
+}

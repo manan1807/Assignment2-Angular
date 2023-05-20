@@ -1,0 +1,9 @@
+<div class="border-div">
+<div style="text-align: center; padding-top: 1rem;">
+    <label for="counterValue" style="margin-right: 1rem;">Enter Timer Limit</label>
+    <input   name="counterValue" id="counterValue" [(ngModel)] = "counterValue"/><br>
+    <button class="btn btn-primary" style="margin-top: 1rem;"  (click)="timeButtonClicked()">{{ buttonName }}</button>
+    <button class="btn btn-secondary" style="margin-top: 1rem;margin-left: 1rem;" (click)="ResetTimer()">Reset</button>
+
+    </div>  
+</div>

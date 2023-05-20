@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 10px;">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let header of stuHeaders"><button class="btn btn-light"  value = "{{ header }}" (click)="getOrderChanged($event)">{{ header }}</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of newStatedArrayOfStudents">
+            <td>{{ student.name }}</td>
+            <td>{{ student.class }}</td>
+            <td>{{ student.section }}</td>
+            <td>{{ student.sub1 }}</td>
+            <td>{{ student.sub2 }}</td>
+            <td>{{ student.sub3 }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

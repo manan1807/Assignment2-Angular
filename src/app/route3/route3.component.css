@@ -1,0 +1,9 @@
+
+.border-div{
+    border: 2px solid black;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
