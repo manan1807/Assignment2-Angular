@@ -14,13 +14,11 @@ import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    Route1Component,
-    Route5Component,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     HttpClientModule,
     FormsModule,
     SharedModule
