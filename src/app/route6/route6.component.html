@@ -1,1 +1,9 @@
-<p>route6 works!</p>
+<div style="height: 90vh; overflow: scroll;" #scrollMe ngModel scrollMe="ngModel" (scroll)="scrollBox(scrollMe)">
+    <div class="box" *ngFor="let a of arrSize | range; index as i">
+        <button class="btn btn-secondary" (click)="showAlert($event)" value="{{ i }}">
+            {{ i }}
+        </button>
+    </div>
+    <div class="box" id = "targetDiv" >target</div>
+    <!-- #box ngModel box = "ngModel" -->
+</div>
