@@ -18,6 +18,7 @@ export class Route5Component {
     this.http.get("/assets/students.json")
       .subscribe((res: any) => {
         this.studentsData = res;
+        console.log("******"+JSON.stringify(this.studentsData));
         this.newStatedArrayOfStudents = this.studentsData;
         this.stuHeaders = Object.keys(this.studentsData[0]);
       });
@@ -25,23 +26,27 @@ export class Route5Component {
   getOrderChanged(event: any) {
     this.headerValue = event.target.value;
     this.count++;
-
-    const sortedArray  = this.studentsData.slice().sort((a: any, b: any) => {
-      if(a[this.headerValue] < b[this.headerValue])
+  
+    // Ensure studentsData is defined and not empty before sorting.
+    if (this.studentsData && this.studentsData.length > 0) {
+      const sortedArray = this.studentsData.slice().sort((a: any, b: any) => {
+        if (a[this.headerValue] < b[this.headerValue])
           return -1;
-      if(a[this.headerValue] > b[this.headerValue])
+        if (a[this.headerValue] > b[this.headerValue])
           return 1;
-      else
+        else
           return 0;
-    });
-    if (this.count == 1)
-      this.getOrderAsc(sortedArray);
-    if (this.count == 2)
-      this.getOrderDesc(sortedArray);
-    else if (this.count == 3)
-      this.resetOriginalOrder(sortedArray);
-
+      });
+  
+      if (this.count === 1)
+        this.getOrderAsc(sortedArray);
+      else if (this.count === 2)
+        this.getOrderDesc(sortedArray);
+      else if (this.count === 3)
+        this.resetOriginalOrder(sortedArray);
+    }
   }
+  
   getOrderAsc(value: any) {
     console.log("count is 1:   " + value);
     this.newStatedArrayOfStudents = value;
@@ -53,9 +58,9 @@ export class Route5Component {
   }
   resetOriginalOrder(value: any) {
     console.log("count is 3:   " + value);
-    this.newStatedArrayOfStudents = this.studentsData;
-  
+    this.newStatedArrayOfStudents = this.studentsData.slice(); // Make a copy of the studentsData array
     this.count = 0;
   }
+  
 
 }

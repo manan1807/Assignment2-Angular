@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
     name: 'range'
 })
-export class Range implements PipeTransform {
+export class RangePipe implements PipeTransform {
     transform(value: number) {
 
         if (!value)

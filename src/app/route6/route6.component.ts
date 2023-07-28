@@ -15,8 +15,6 @@ export class Route6Component {
     if (divEl.getBoundingClientRect().top < event.getBoundingClientRect().height) {
       this.arrSize += 5;
     }
-
-
   }
   showAlert(event: any) {
     alert("Button of " + event.target.value + "th div is clicked!");
